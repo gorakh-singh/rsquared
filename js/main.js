@@ -32,6 +32,44 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach((el) => el.classList.add("in-view"));
   }
 
+  // Hero stamp-line word cycle (typewriter effect)
+  const cycleEl = document.querySelector(".cycle-word");
+  if (cycleEl) {
+    const words = ["Stats", "Analytics", "IT"];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) {
+      cycleEl.textContent = words[0];
+    } else {
+      let wordIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      const tick = () => {
+        const current = words[wordIndex];
+        if (!deleting) {
+          charIndex++;
+          cycleEl.textContent = current.slice(0, charIndex);
+          if (charIndex === current.length) {
+            deleting = true;
+            setTimeout(tick, 1300);
+            return;
+          }
+        } else {
+          charIndex--;
+          cycleEl.textContent = current.slice(0, charIndex);
+          if (charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+          }
+        }
+        setTimeout(tick, deleting ? 55 : 90);
+      };
+
+      tick();
+    }
+  }
+
   // Footer year
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
