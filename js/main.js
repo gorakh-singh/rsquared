@@ -75,6 +75,24 @@ document.addEventListener("DOMContentLoaded", () => {
     el.textContent = new Date().getFullYear();
   });
 
+  // Newsletter form -> mailto fallback (no backend required)
+  const nlForm = document.getElementById("newsletter-form");
+  if (nlForm) {
+    nlForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = nlForm.email.value.trim();
+      const body = `Please add this email to the R-Squared newsletter:\n\n${email}`;
+      window.location.href = `mailto:rsquared@iimsambalpur.ac.in?subject=${encodeURIComponent(
+        "Newsletter subscription"
+      )}&body=${encodeURIComponent(body)}`;
+
+      const status = document.getElementById("newsletter-status");
+      if (status) {
+        status.textContent = "Opening your email client to send this request…";
+      }
+    });
+  }
+
   // Contact form -> mailto fallback (no backend required)
   const form = document.getElementById("contact-form");
   if (form) {

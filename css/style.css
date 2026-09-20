@@ -263,7 +263,7 @@ h3, h4 {
 }
 
 .nav-links a {
-  padding: 8px 16px;
+  padding: 8px 12px;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;
@@ -992,7 +992,7 @@ textarea { resize: vertical; min-height: 130px; }
   .stats-strip { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1080px) {
   .nav-links, .nav-cta .btn-outline { display: none; }
   .nav-toggle { display: flex; }
   .navbar.open .nav-links {
@@ -1007,6 +1007,9 @@ textarea { resize: vertical; min-height: 130px; }
     border-bottom: 1px solid var(--border);
   }
   .navbar.open .nav-links a { padding: 12px 8px; width: 100%; }
+}
+
+@media (max-width: 760px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .event-card { grid-template-columns: 1fr; }

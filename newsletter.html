@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Alumni | R-Squared — IIM Sambalpur</title>
-<meta name="description" content="Past coordinators and ExCom members who helped build R-Squared, the Analytics Club of IIM Sambalpur." />
+<title>Newsletter | R-Squared — IIM Sambalpur</title>
+<meta name="description" content="Subscribe to the R-Squared newsletter for event updates, analytics reads, and club news from IIM Sambalpur's Analytics Club." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,10 +22,10 @@
       <a href="index.html" data-page="index.html">Home</a>
       <a href="about.html" data-page="about.html">About</a>
       <a href="events.html" data-page="events.html">Events</a>
-      <a href="team.html" data-page="team.html" class="active">Team</a>
+      <a href="team.html" data-page="team.html">Team</a>
       <a href="gallery.html" data-page="gallery.html">Gallery</a>
       <a href="blog/index.html" data-page="blog">Blog</a>
-      <a href="newsletter.html" data-page="newsletter.html">Newsletter</a>
+      <a href="newsletter.html" data-page="newsletter.html" class="active">Newsletter</a>
       <a href="contact.html" data-page="contact.html">Contact</a>
     </div>
     <div class="nav-cta">
@@ -37,49 +37,76 @@
 
 <header class="page-header">
   <div class="container">
-    <span class="eyebrow">Alumni Network</span>
-    <h1>Those who came before us</h1>
-    <p>Past coordinators and ExCom members who helped build R-Squared.</p>
-    <div class="breadcrumb"><a href="team.html">← Back to Team</a></div>
+    <span class="eyebrow">Stay in the loop</span>
+    <h1>The R-Squared Newsletter</h1>
+    <p>Event announcements, analytics reads, and club updates — straight to your inbox.</p>
   </div>
 </header>
 
 <section class="section" style="padding-top:20px;">
   <div class="container">
-    <div class="alumni-list">
-      <div class="alumni-item reveal">
+    <div class="card reveal" style="max-width:640px; margin-inline:auto; padding:40px;">
+      <h3 style="margin-bottom:8px; font-size:1.3rem;">Subscribe</h3>
+      <p style="margin-bottom:22px;">Drop your email and we'll add you to the list.</p>
+      <form id="newsletter-form" class="form-grid">
         <div>
-          <h4>Alumni Name</h4>
-          <span class="role">Role Held, Batch Year</span>
+          <label for="nl-email">Email Address</label>
+          <input type="email" id="nl-email" name="email" placeholder="you@example.com" required />
         </div>
-        <a href="#" class="li-link" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
-      <div class="alumni-item reveal">
-        <div>
-          <h4>Alumni Name</h4>
-          <span class="role">Role Held, Batch Year</span>
-        </div>
-        <a href="#" class="li-link" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
-      <div class="alumni-item reveal">
-        <div>
-          <h4>Alumni Name</h4>
-          <span class="role">Role Held, Batch Year</span>
-        </div>
-        <a href="#" class="li-link" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
+        <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+        <p class="form-note" id="newsletter-status">This opens your email client with a pre-filled subscription request — nothing is sent automatically.</p>
+      </form>
     </div>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
-    <div class="cta-banner reveal">
-      <span class="eyebrow" style="justify-content:center;">Are you an alum?</span>
-      <h2>Help us keep this list up to date</h2>
-      <p>If you served on the R-Squared ExCom and don't see your name here, reach out and we'll add you.</p>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">What's inside</span>
+      <h2>What you'll get</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="card-icon">📅</div>
+        <h3>Event updates</h3>
+        <p>Dates, registrations, and speaker line-ups for Vishlesh, Ethos competitions, and guest lectures.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📖</div>
+        <h3>Analytics reads</h3>
+        <p>Short, curated pieces on data, careers, and tools — from our blog and beyond.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">📣</div>
+        <h3>Club news</h3>
+        <p>Wins, new programs, and opportunities to get involved with the R-Squared team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Archive</span>
+      <h2>Past issues</h2>
+      <p>Issues will be listed here as they're published.</p>
+    </div>
+    <div class="alumni-list">
+      <div class="alumni-item reveal">
+        <div>
+          <h4>Issue #1 — Title</h4>
+          <span class="role">Month Year</span>
+        </div>
+        <a href="#" class="li-link" target="_blank" rel="noopener">Read ↗</a>
+      </div>
+      <div class="alumni-item reveal">
+        <div>
+          <h4>Issue #2 — Title</h4>
+          <span class="role">Month Year</span>
+        </div>
+        <a href="#" class="li-link" target="_blank" rel="noopener">Read ↗</a>
       </div>
     </div>
   </div>
