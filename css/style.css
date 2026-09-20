@@ -711,45 +711,6 @@ h3, h4 {
   backdrop-filter: blur(4px);
 }
 
-/* ---------- Blog ---------- */
-.blog-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-card);
-}
-
-.blog-thumb {
-  height: 160px;
-  background: linear-gradient(135deg, rgba(184,92,62,0.16), rgba(63,125,107,0.14));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: rgba(38,32,25,0.35);
-}
-
-.blog-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-.blog-meta { font-size: 0.78rem; color: var(--text-faint); margin-bottom: 10px; }
-.blog-body h3 { font-size: 1.1rem; margin-bottom: 10px; }
-.blog-body p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; }
-.blog-link { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-top: auto; }
-
-.blog-post {
-  max-width: 760px;
-  margin-inline: auto;
-}
-.blog-post h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 18px 0 10px; }
-.blog-post .blog-meta { margin-bottom: 30px; }
-.blog-post p { color: var(--text-dim); margin-bottom: 18px; font-size: 1.02rem; }
-.blog-post h2 { margin: 32px 0 14px; font-size: 1.4rem; }
-.blog-post ul { margin: 0 0 18px 0; }
-.blog-post li { color: var(--text-dim); margin-bottom: 8px; padding-left: 20px; position: relative; }
-.blog-post li::before { content: "—"; position: absolute; left: 0; color: var(--primary); }
-
 /* ---------- CTA banner ---------- */
 .cta-banner {
   background: var(--surface);
