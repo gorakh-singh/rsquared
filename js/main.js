@@ -70,6 +70,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Logo marquee: repeat the logos until they span the screen, then loop seamlessly
+  const SPEED = 50; // pixels per second
+  const marquees = document.querySelectorAll("[data-marquee]");
+
+  const buildMarquee = (marquee) => {
+    const track = marquee.querySelector(".marquee-track");
+    if (!track) return;
+    track.querySelectorAll(".marquee-clone").forEach((c) => c.remove());
+
+    const originals = [...track.children];
+    const itemWidth = (el) => el.offsetWidth + parseFloat(getComputedStyle(el).marginRight || 0);
+    const oneRound = originals.reduce((sum, el) => sum + itemWidth(el), 0);
+    if (!oneRound) return;
+
+    // one "set" must be at least as wide as the screen, then the set is doubled
+    const reps = Math.max(1, Math.ceil(marquee.clientWidth / oneRound));
+    const copy = (el) => {
+      const c = el.cloneNode(true);
+      c.classList.add("marquee-clone");
+      c.setAttribute("aria-hidden", "true");
+      c.querySelectorAll("a, button").forEach((n) => n.setAttribute("tabindex", "-1"));
+      if (c.matches("a, button")) c.setAttribute("tabindex", "-1");
+      return c;
+    };
+    for (let i = 0; i < reps * 2 - 1; i++) originals.forEach((el) => track.appendChild(copy(el)));
+
+    track.style.setProperty("--marquee-duration", (oneRound * reps) / SPEED + "s");
+    marquee.classList.add("is-ready");
+  };
+
+  if (marquees.length) {
+    const buildAll = () => marquees.forEach(buildMarquee);
+    if (document.readyState === "complete") buildAll();
+    else window.addEventListener("load", buildAll); // wait for logo images to size themselves
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(buildAll, 200);
+    });
+  }
+
   // Footer year
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
